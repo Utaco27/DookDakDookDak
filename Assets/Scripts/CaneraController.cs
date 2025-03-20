@@ -15,7 +15,7 @@ public class CaneraController : MonoBehaviour
 
         pos.x = Mathf.Clamp(pos.x, 0f, 61.5f);
         pos.y = Mathf.Clamp(pos.y, 0f, 27.9f);
-
+        //테스트코드추가 확인
         transform.position = pos;
     }
 
