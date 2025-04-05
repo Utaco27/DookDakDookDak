@@ -14,6 +14,10 @@ TagManager:
   - B_Fire
   - OutWall
   - B_Blocked_Earth
+  - Bullet_Water
+  - Bullet_Earth
+  - Bullet_Wind
+  - Bullet_Find
   layers:
   - Default
   - TransparentFX

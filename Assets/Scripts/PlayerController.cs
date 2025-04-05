@@ -15,10 +15,10 @@ public class PlayerController : MonoBehaviour
     Transform firePoint;
     public GameObject bulletPrefab;
 
-    private bool water = false;
-    private bool earth = false;
-    private bool wind = false;
-    private bool fire = false;
+    public bool water = false;
+    public bool earth = false;
+    public bool wind = false;
+    public bool fire = false;
 
 
     void p_Move_Top()
@@ -63,12 +63,31 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                water = false;
                 GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
                 BulletScript bulletScript = bullet.GetComponent<BulletScript>();
                 if(bulletScript != null)
                 {
                     bulletScript.SetElement("Water");
                     if(playerTransform.localScale.x <= 0f)
+                    {
+                        bulletScript.direction = -1f;
+                    }
+                }
+            }
+        }
+
+        if(wind)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                wind = false;
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+                if (bulletScript != null)
+                {
+                    bulletScript.SetElement("Wind");
+                    if (playerTransform.localScale.x <= 0f)
                     {
                         bulletScript.direction = -1f;
                     }
@@ -116,6 +135,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "E_Water")
         {
             water = true;
+            Debug.Log("¹°¿ø¼Ò È¹µæ");
         }
         if (col.gameObject.tag == "E_Earth")
         {
@@ -123,7 +143,8 @@ public class PlayerController : MonoBehaviour
         }
         if (col.gameObject.tag == "E_Wind")
         {
-
+            wind = true;
+            Debug.Log("¹Ù¶÷¿ø¼Ò È¹µæ");
         }
         if (col.gameObject.tag == "E_Fire")
         {

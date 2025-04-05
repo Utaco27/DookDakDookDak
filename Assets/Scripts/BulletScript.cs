@@ -9,7 +9,7 @@ public class BulletScript : MonoBehaviour
     public float direction = 1f;
     public void SetElement(string element)
     {
-        gameObject.tag = "E_" + element;
+        gameObject.tag = "Bullet_" + element;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
