@@ -13,8 +13,8 @@ public class CaneraController : MonoBehaviour
         pos.y = Mathf.Lerp(transform.position.y, playerTransform.position.y, 0.3f);
         pos.z = transform.position.z;
 
-        pos.x = Mathf.Clamp(pos.x, 0f, 61.5f);
-        pos.y = Mathf.Clamp(pos.y, 0f, 27.9f);
+        pos.x = Mathf.Clamp(pos.x, -1.82f, 47.42f);
+        pos.y = Mathf.Clamp(pos.y, -0.4f, 22.2f);
         transform.position = pos;
     }
 
