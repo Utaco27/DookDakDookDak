@@ -26,7 +26,7 @@ public class EarthBlock : MonoBehaviour
     {
         if (!ground)
         {
-            if (col.gameObject.tag == "E_Water") //임시코드, 추후수정 예정
+            if (col.gameObject.tag == "Bullet_Water") //임시코드, 추후수정 예정
             {
                 ground = true;
                 transform.GetComponent<BoxCollider2D>().isTrigger = false;
